@@ -20,7 +20,8 @@ jobs:
       - name: Prepare web files
         run: |
           mkdir www
-          cp index.html sw.js manifest.webmanifest *.png www/
+                    cp "$(ls -S *.html | head -1)" www/index.html
+          cp sw.js manifest.webmanifest *.png www/
       - name: Create Android project
         run: |
           npm init -y
